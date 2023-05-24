@@ -61,8 +61,6 @@ class User extends Authenticatable implements MustVerifyEmail
         return new Attribute(set: fn ($password) => Hash::make($password));
     }
 
-    
-
     /**
      * The attributes that should be cast.
      *
@@ -79,9 +77,22 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var @return \App\Models\HasMany
      */
+    public function customers(): HasMany
+    {
+        return $this->hasMany(Customer::class);
+    }
+
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var @return \App\Models\HasMany
+     */
     public function sales(): HasMany
     {
         return $this->hasMany(SalesOrder::class);
     }
+
+
 
 }

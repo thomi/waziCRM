@@ -17,7 +17,10 @@ class Customer extends Model
      */
     protected $fillable = [
         'full_name',
+        'email_address',
         'phone_number',
+        'address',
+        'user_id'
     ];
 
     /**
@@ -28,5 +31,13 @@ class Customer extends Model
     public function leads(): HasMany
     {
         return $this->hasMany(Lead::class);
+    }
+
+    /**
+     * Get the post that owns the comment.
+     */
+    public function customer()
+    {
+        return $this->belongsTo(User::class);
     }
 }

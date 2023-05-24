@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id')->startingValue(301789);
+            $table->string('full_name');
+            $table->string('email_address')->unique()->nullable();
+            $table->string('phone_number')->unique();
+            $table->string('address')->nullable();
+            $table->foreign('id')->unsigned()->references('id')->on('users')->onDelete('cascade');  
             $table->timestamps();
         });
     }

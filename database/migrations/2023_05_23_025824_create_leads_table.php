@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('leads', function (Blueprint $table) {
             $table->id();
+            $table->string('source');
+            $table->string('status');
+            $table->timestamp('converted_at')->nullable();
+            $table->foreign('id')->unsigned()->references('id')->on('customers')->onDelete('cascade');  
             $table->timestamps();
         });
     }

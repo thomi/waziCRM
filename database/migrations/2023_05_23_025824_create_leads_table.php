@@ -14,12 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('leads', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id')->startingValue(30001);
             $table->string('source');
-            $table->string('status');
+            $table->enum('status', ['open', 'complicated', 'closed']);
             $table->timestamp('converted_at')->nullable();
-            $table->foreign('id')->unsigned()->references('id')->on('customers')->onDelete('cascade');  
+            $table->unsignedInteger('customer_id');
+            $table->foreign('customer_id')->unsigned()->references('id')->on('customers')->onDelete('cascade');
+            $table->unsignedInteger('campaign_id')->nullable();
+            $table->foreign('campaign_id')->unsigned()->references('id')->on('campaigns')->onDelete('cascade');  
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

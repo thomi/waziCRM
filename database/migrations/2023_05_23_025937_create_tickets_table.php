@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tickets', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id')->startingValue(60001);
+            $table->string('title');
+            $table->boolean('status');
+            $table->unsignedInteger('lead_id');
+            $table->foreign('lead_id')->unsigned()->references('id')->on('leads')->onDelete('cascade'); 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

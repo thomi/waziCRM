@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id')->startingValue(2190523);
+            $table->increments('id')->startingValue(10001);
             $table->string('full_name');
             $table->string('username');
             $table->string('email_address')->unique();
@@ -22,7 +22,6 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('phone_verified_at')->nullable();
             $table->string('password');
-
             $table->timestamps();
             $table->softDeletes();
         });

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -13,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
     use HasFactory, HasRoles, HasApiTokens, Notifiable, SoftDeletes;
 
@@ -51,6 +50,16 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'phone_verified_at' => 'datetime',
+    ];
+
+    /**
      * Hashes the password attribute.
      *
      * @param  string  $value
@@ -61,16 +70,6 @@ class User extends Authenticatable implements MustVerifyEmail
         return new Attribute(set: fn ($password) => Hash::make($password));
     }
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'phone_verified_at' => 'datetime',
-    ];
-
     
     /**
      * The attributes that should be cast.
@@ -80,17 +79,6 @@ class User extends Authenticatable implements MustVerifyEmail
     public function customers(): HasMany
     {
         return $this->hasMany(Customer::class);
-    }
-
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var @return \App\Models\HasMany
-     */
-    public function sales(): HasMany
-    {
-        return $this->hasMany(SalesOrder::class);
     }
 
 

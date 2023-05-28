@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('opportunities', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id')->startingValue('40001');
+            $table->bigInteger('amount');
+            $table->unsignedInteger('lead_id');
+            $table->foreign('lead_id')->unsigned()->references('id')->on('leads')->onDelete('cascade');  
+            $table->timestamp('closed_at')->nullable();
             $table->timestamps();
         });
     }

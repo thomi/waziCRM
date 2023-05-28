@@ -9,13 +9,27 @@ class Opportunity extends Model
 {
     use HasFactory;
 
-        /**
-     * The attributes that are mass assignable.
+    /**
      *
-     * @var array<int, string>
      */
     protected $fillable = [
-        'full_name',
-        'phone_number',
+        'amount',
+        'closed_at',
+        'lead_id'
     ];
+
+    /**
+     *
+     */
+    protected $casts = [
+        'closed_at' => 'datetime',
+    ];
+
+    /**
+     * 
+     */
+    public function lead()
+    {
+        return $this->belongsTo(Lead::class);
+    }
 }

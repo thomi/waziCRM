@@ -1,6 +1,6 @@
 ## WAZI CRM
 
-WaziCRM is a user-friendly CRM software that simplifies customer relationship management for your business. With WaziCRM, you can efficiently manage leads, track sales activities, and enhance customer interactions. Our centralized platform provides valuable insights and streamlines your processes, empowering your team to deliver exceptional customer experiences. Boost your sales efficiency and foster business growth with WaziCRM.
+WaziCRM is a user-friendly CRM software that simplifies customer relationship management for your business. Efficiently manage leads, track sales activities, and enhance customer interactions. Our centralized platform provides valuable insights and streamlines your processes, empowering your team to deliver exceptional customer experiences. Boost your sales efficiency and foster business growth with WaziCRM.
 
 The first edition of the CRM, should at the bare minimum:
 

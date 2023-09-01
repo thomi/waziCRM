@@ -1,5 +1,3 @@
-<p align="center"><a href="#" target="_blank"><img src="hero.png" width="400" alt="SpaceYaTech Logo"></a></p>
-
 ## WAZI CRM
 
 WaziCRM is a user-friendly CRM software that simplifies customer relationship management for your business. With WaziCRM, you can efficiently manage leads, track sales activities, and enhance customer interactions. Our centralized platform provides valuable insights and streamlines your processes, empowering your team to deliver exceptional customer experiences. Boost your sales efficiency and foster business growth with WaziCRM.
@@ -13,7 +11,7 @@ Comprehensive Sales Pipeline Tracking: gain a comprehensive view of your sales p
 Integrated Customer Communication: integrate various communication channels, including emails, messages, and notes, directly within the platform. This centralized communication hub ensures that your team has a complete view of customer interactions, facilitating efficient collaboration and providing a holistic understanding of customer relationships.
 
 ## Getting Started
- To get started with the project locally check out the [installation guide](https://github.com/SpaceyaTech/Team-Rio-Laravel/.github/INSTALL.md/) to get up and running quickly.
+ To get started with the project locally check out the [installation guide](https://laravel.com/docs/10.x/installation#your-first-laravel-project) to get up and running quickly.
 
 ## Contributing
 Thanks for your interest in contributing to Repo!! 
